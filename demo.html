@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>支付宝应用拖放排序功能</title>
+    <style type="text/css">
+      body,
+      div,
+      dl,
+      dt,
+      dd,
+      ul,
+      ol,
+      li,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      pre,
+      form,
+      fieldset,
+      input,
+      textarea,
+      p,
+      blockquote,
+      th,
+      td {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      fieldset,
+      img {
+        border: 0;
+      }
+      address,
+      caption,
+      cite,
+      code,
+      dfn,
+      em,
+      strong,
+      th,
+      var {
+        font-style: normal;
+        font-weight: normal;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      caption,
+      th {
+        text-align: left;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 100%;
+        font-weight: normal;
+      }
+      q:before,
+      q:after {
+        content: ;
+      }
+      abbr,
+      acronym {
+        border: 0;
+      }
+      .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: ' ';
+        clear: both;
+        height: 0;
+      }
+      .clearfix {
+        zoom: 1;
+      }
+      .DragSortBox {
+        position: relative;
+        height: 280px;
+        width: 580px;
+        border: 1px solid red;
+        margin: 10px;
+      }
+      .DragSortList {
+        float: left;
+        width: 70px;
+        height: 60px;
+        padding-top: 10px;
+        margin: 10px 5px;
+        border: 1px dashed transparent;
+        cursor: move;
+      }
+
+      .DragDashedBox {
+        float: left;
+        width: 70px;
+        height: 60px;
+        padding-top: 10px;
+        border: 1px dashed #ffcc99;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        margin: 10px 5px;
+      }
+      .DragSortList .AppLogo {
+        width: 36px;
+        height: 36px;
+        margin: 0 auto 5px;
+        background: url(combo.jpg) no-repeat center top;
+      }
+      .DragSortList .AppLogo.app-icon36-0 {
+        background-position: center 0;
+      }
+      .DragSortList .AppLogo.app-icon36-36 {
+        background-position: center -36px;
+      }
+      .DragSortList .AppLogo.app-icon36-72 {
+        background-position: center -72px;
+      }
+      .DragSortList .AppLogo.app-icon36-108 {
+        background-position: center -108px;
+      }
+      .DragSortList .AppLogo.app-icon36-144 {
+        background-position: center -144px;
+      }
+      .DragSortList .AppLogo.app-icon36-180 {
+        background-position: center -180px;
+      }
+      .DragSortList .AppName {
+        font-size: 12px;
+        text-align: center;
+        color: #666;
+      }
+    </style>
+    <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="PZ-DragSort.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        var dragSort1 = new DragSort($('.DragSortBox').eq(0), function(
+          dragList
+        ) {
+          alert('放置成功.');
+        });
+        var dragSort2 = new DragSort($('.DragSortBox').eq(1));
+      });
+    </script>
+  </head>
+  <body style="padding:100px;height:1500px;">
+    <div class="DragSortWrap">
+      <ul class="DragSortBox clearfix">
+        <li class="DragSortList" data-item="1">
+          <div class="AppLogo app-icon36-0"></div>
+          <div class="AppName">水电煤气</div>
+        </li>
+        <li class="DragSortList" data-item="2">
+          <div class="AppLogo app-icon36-36"></div>
+          <div class="AppName">银行卡转帐</div>
+        </li>
+        <li class="DragSortList" data-item="3">
+          <div class="AppLogo app-icon36-72"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="4">
+          <div class="AppLogo app-icon36-108"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="5">
+          <div class="AppLogo app-icon36-144"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="6">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="7">
+          <div class="AppLogo app-icon36-36"></div>
+          <div class="AppName">水电煤气</div>
+        </li>
+        <li class="DragSortList" data-item="8">
+          <div class="AppLogo app-icon36-72"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="9">
+          <div class="AppLogo app-icon36-108"></div>
+          <div class="AppName">银行卡转帐</div>
+        </li>
+        <li class="DragSortList" data-item="10">
+          <div class="AppLogo app-icon36-144"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="11">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="12">
+          <div class="AppLogo app-icon36-0"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="13">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="14">
+          <div class="AppLogo app-icon36-0"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="15">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="16">
+          <div class="AppLogo app-icon36-36"></div>
+          <div class="AppName">水电煤气</div>
+        </li>
+        <li class="DragSortList" data-item="17">
+          <div class="AppLogo app-icon36-72"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="18">
+          <div class="AppLogo app-icon36-108"></div>
+          <div class="AppName">银行卡转帐</div>
+        </li>
+        <li class="DragSortList" data-item="19">
+          <div class="AppLogo app-icon36-144"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="20">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="21">
+          <div class="AppLogo app-icon36-0"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+      </ul>
+    </div>
+    <div class="DragSortWrap d1">
+      <ul class="DragSortBox clearfix">
+        <li class="DragSortList" data-item="1">
+          <div class="AppLogo app-icon36-0"></div>
+          <div class="AppName">水电煤气</div>
+        </li>
+        <li class="DragSortList" data-item="2">
+          <div class="AppLogo app-icon36-36"></div>
+          <div class="AppName">银行卡转帐</div>
+        </li>
+        <li class="DragSortList" data-item="3">
+          <div class="AppLogo app-icon36-72"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="4">
+          <div class="AppLogo app-icon36-108"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="5">
+          <div class="AppLogo app-icon36-144"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="6">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="7">
+          <div class="AppLogo app-icon36-36"></div>
+          <div class="AppName">水电煤气</div>
+        </li>
+        <li class="DragSortList" data-item="8">
+          <div class="AppLogo app-icon36-72"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="9">
+          <div class="AppLogo app-icon36-108"></div>
+          <div class="AppName">银行卡转帐</div>
+        </li>
+        <li class="DragSortList" data-item="10">
+          <div class="AppLogo app-icon36-144"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="11">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="12">
+          <div class="AppLogo app-icon36-0"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="13">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="14">
+          <div class="AppLogo app-icon36-0"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="15">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="16">
+          <div class="AppLogo app-icon36-36"></div>
+          <div class="AppName">水电煤气</div>
+        </li>
+        <li class="DragSortList" data-item="17">
+          <div class="AppLogo app-icon36-72"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="18">
+          <div class="AppLogo app-icon36-108"></div>
+          <div class="AppName">银行卡转帐</div>
+        </li>
+        <li class="DragSortList" data-item="19">
+          <div class="AppLogo app-icon36-144"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+        <li class="DragSortList" data-item="20">
+          <div class="AppLogo app-icon36-180"></div>
+          <div class="AppName">信用卡还款</div>
+        </li>
+        <li class="DragSortList" data-item="21">
+          <div class="AppLogo app-icon36-0"></div>
+          <div class="AppName">跨行汇款</div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
